@@ -1,6 +1,8 @@
-# AI Loom
+# Odysseus
 
-A framework for coordinating **multiple AI agents** across multi-repo development workflows. AI Loom provides runbooks, context files, and conventions that help AI agents (Claude, Cursor, Copilot, etc.) work effectively on your codebase.
+AI Loom workspace for the **Odysseus** project (codename). Coordinates AI agents across multi-repo development: runbooks, context files, and conventions for Claude, Cursor, Copilot, and similar tools.
+
+This repository is the coordination layer; application code will live in separate repos listed in [REPOS.md](./REPOS.md) as they are added.
 
 ## Getting Started
 

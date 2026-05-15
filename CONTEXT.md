@@ -6,8 +6,7 @@ Read this file at the **start of a new chat**. It tells you where runbooks, refe
 
 ## Overview (terse)
 
-<!-- CUSTOMIZE: Add a brief description of your project here -->
-This workspace coordinates work across **multiple repos**; the list, clone URLs, and branch conventions are in **[REPOS.md](./REPOS.md)**.
+**Odysseus** (project codename) — greenfield project coordinated via this AI Loom workspace. Repository list, clone URLs, and branch conventions are in **[REPOS.md](./REPOS.md)**. Application repos are not configured yet; add them to REPOS.md as they are created.
 
 **Default workflow:** `work/` exists. Create a run directory under `work/<purpose>-<date>/`, clone only the repos you need from REPOS.md, do the task **in that run dir**, then back out. See runbook **[general-fix](./runbooks/general-fix.md)**. **Never touch `current/`** — work only in `work/`. The `current/` directory is for the user to inspect the baseline codebase; agents must not modify it. When the user says **"end"**, the session work dir is deleted after refreshing **`current/`** (git pull only in each repo we worked on) so the user has an up-to-date baseline; `current/` is gitignored.
 
@@ -58,13 +57,7 @@ All runbooks live in **`runbooks/`**.
 
 ## Architecture (terse)
 
-<!-- CUSTOMIZE: Add your project architecture here -->
-<!-- Example:
-- **API:** AWS Lambda + API Gateway, Node.js, DynamoDB
-- **Admin:** React + TypeScript (Vite)
-- **Mobile:** React Native/Expo
-- **Infra:** Terraform, GitHub Actions
--->
+TBD — document components here as the Odysseus stack is chosen (e.g. API, frontend, infra).
 
 ---
 

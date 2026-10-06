@@ -1,0 +1,32 @@
+---
+description: How to SSH to the Tailscale Mac Studio (hostname mini-01-591)
+alwaysApply: true
+---
+
+# Remote box (Tailscale)
+
+The always-on box is a **Mac Studio (64GB)** — prototype for the replicable "sovereign buddy" hardware. Tailscale MagicDNS is `mini-01-591`.
+
+When asked to connect to "the box", the Studio, "the Mini" (legacy name), or the Tailscale machine, SSH over Tailscale MagicDNS. Do not put the password in chat, commits, or logs.
+
+## Connection
+
+- Host: `mini-01-591.tailb6b3a8.ts.net`
+- IP: `100.74.108.103`
+- User: `betony220`
+- Password: read from `/Users/lindsaymacvean/Workarea/eircode-scraper/.secrets/remote.env` (`SSH_PASSWORD`). That file is gitignored.
+
+Load credentials:
+
+```bash
+set -a && source /Users/lindsaymacvean/Workarea/eircode-scraper/.secrets/remote.env && set +a
+```
+
+Connect non-interactively with `sshpass` if available:
+
+```bash
+export SSHPASS="$SSH_PASSWORD"
+sshpass -e ssh -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}"
+```
+
+The host is reachable only when Tailscale is up on this Mac and on the Studio. If SSH fails, check `tailscale status` before changing credentials or code.

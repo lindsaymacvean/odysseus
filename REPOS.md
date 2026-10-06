@@ -5,12 +5,14 @@ Reference clone URLs for **Odysseus** (project codename) repositories.
 | Repo | URL | Role |
 |------|-----|------|
 | **odysseus** | https://github.com/lindsaymacvean/odysseus | AI Loom coordination workspace (this repo) |
-
-Application repositories will be added here as the project grows.
+| **ai-marketing-box** | https://github.com/bennettinnovations/ai-marketing-box | LinkedIn automation, deployed to Mac Studio via rsync |
+| **eircode-scraper** | git@github.com:bennettinnovations/eircode-scraper.git | Eircode data scraping, runs on Mac Studio |
 
 ## Branch and workflow
 
 - **odysseus**: Trunk-based; work via PRs into **main**.
+- **ai-marketing-box**: PRs to **main**; CI deploys to Mac Studio via rsync.
+- **eircode-scraper**: PRs to **main**.
 
 ## Work directory and cloning for any fix
 
@@ -21,7 +23,7 @@ For any fix that needs one or more of these repos cloned locally: create a run d
 ## Clone examples
 
 ```bash
-# Application repos (add as they are created)
-# git clone https://github.com/lindsaymacvean/odysseus-api.git
-# git clone https://github.com/lindsaymacvean/odysseus-web.git
+# Mac Studio apps
+git clone https://github.com/bennettinnovations/ai-marketing-box.git
+git clone git@github.com:bennettinnovations/eircode-scraper.git
 ```

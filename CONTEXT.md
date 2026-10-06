@@ -6,7 +6,11 @@ Read this file at the **start of a new chat**. It tells you where runbooks, refe
 
 ## Overview (terse)
 
-**Odysseus** (project codename) — greenfield project coordinated via this AI Loom workspace. Repository list, clone URLs, and branch conventions are in **[REPOS.md](./REPOS.md)**. Application repos are not configured yet; add them to REPOS.md as they are created.
+**Odysseus** (project codename) — build a **sovereign “little buddy”**: local/controllable inference plus **structured, continuously improving context**. Product direction: **context engine / agent** toward **£20M by Dec 2028**. **Initial market:** **angel investor deal processing** (first process + context pack). Full vision and ICP: **[docs/product-brief.md](./docs/product-brief.md)**. Living discovery: **[Google Doc](https://docs.google.com/document/d/196vcmVRh4cuq7mzBBl3fAhKtnC2DhQbzFQBmiV8ozps/edit?tab=t.0)**.
+
+Repository list and clone URLs: **[REPOS.md](./REPOS.md)**. Application repos not created yet.
+
+**Core work (repeatable):** (1) figure out the repeatable customer process, (2) build the context that enables it, (3) continuously review and improve context and process as work runs — see product brief.
 
 **Default workflow:** `work/` exists. Create a run directory under `work/<purpose>-<date>/`, clone only the repos you need from REPOS.md, do the task **in that run dir**, then back out. See runbook **[general-fix](./runbooks/general-fix.md)**. **Never touch `current/`** — work only in `work/`. The `current/` directory is for the user to inspect the baseline codebase; agents must not modify it. When the user says **"end"**, the session work dir is deleted after refreshing **`current/`** (git pull only in each repo we worked on) so the user has an up-to-date baseline; `current/` is gitignored.
 
@@ -52,12 +56,16 @@ All runbooks live in **`runbooks/`**.
 | [REPOS.md](./REPOS.md) | Repo list, clone URLs, branch conventions. **Source of truth** when cloning. |
 | [work/WORK-TO-PR.md](./work/WORK-TO-PR.md) | Map of run directories under `work/` to open/merged PRs. Update when adding run dirs. |
 | [TOOLS.md](./TOOLS.md) | CLI tools and common commands per component. |
+| [docs/product-brief.md](./docs/product-brief.md) | Product vision, sovereignty, ICP, markets, context loops, tools under evaluation. |
 
 ---
 
 ## Architecture (terse)
 
-TBD — document components here as the Odysseus stack is chosen (e.g. API, frontend, infra).
+- **Sovereign buddy:** Model on customer-inspectable hardware (e.g. 64GB desk machine or local DC) — **no** extractive cloud dependency for the core trust story. See [docs/product-brief.md](./docs/product-brief.md).
+- **Context engine:** Structured local context with explicit build → run → review loops (process still being defined).
+- **Prototype cloud:** AWS `203712223134`, profile **`odysseus`**, **`eu-west-1`** — experiments only. [TOOLS.md](./TOOLS.md#authentication).
+- **App repos:** TBD — add to REPOS.md when created.
 
 ---
 

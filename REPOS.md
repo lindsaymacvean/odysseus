@@ -10,7 +10,7 @@ Reference clone URLs for **Odysseus** (project codename) repositories.
 
 ## Branch and workflow
 
-- **odysseus**: Trunk-based; work via PRs into **main**.
+- **odysseus**: Push direct to **main** (no PRs required).
 - **ai-marketing-box**: PRs to **main**; CI deploys to Mac Studio via rsync.
 - **eircode-scraper**: PRs to **main**.
 

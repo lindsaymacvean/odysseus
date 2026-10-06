@@ -58,6 +58,23 @@ sshpass -e ssh -o StrictHostKeyChecking=accept-new "${SSH_USER}@${SSH_HOST}"
 **On the Studio:**
 - Working directory: `/Users/betony220/`
 - Dashboard (if deployed): port `8765`
+- Ollama API: `http://localhost:11434`
+
+**Local LLM tools installed:**
+
+| Tool | Path | Purpose |
+|------|------|---------|
+| Ollama | `/Applications/Ollama.app` | Serves qwen3:32b, qwen3:8b, qwen2.5vl:7b |
+| MLX-Flash | `~/mlx-env/` | SSD weight streaming for 70B models |
+| OpenClaw | `/opt/homebrew/bin/openclaw` | Agentic tool (code mode has issues) |
+
+**Run 70B model with SSD streaming:**
+```bash
+source ~/mlx-env/bin/activate
+mlx-flash --model mlx-community/Llama-3.3-70B-Instruct-4bit --ram 20 --kv-quant 8 --prompt "Your prompt"
+```
+
+See [docs/mac-studio-local-llm-2026-10-06.md](./docs/mac-studio-local-llm-2026-10-06.md) for full testing notes.
 
 ---
 
@@ -125,6 +142,8 @@ terraform apply
 | Need | Tool / command |
 |------|----------------|
 | SSH to Mac Studio | Load creds from `eircode-scraper/.secrets/remote.env`, then `sshpass -e ssh ${SSH_USER}@${SSH_HOST}` |
+| Run 70B on Studio | SSH in, `source ~/mlx-env/bin/activate && mlx-flash --model mlx-community/Llama-3.3-70B-Instruct-4bit --ram 20 --prompt "..."` |
+| Ollama on Studio | `curl http://localhost:11434/api/generate -d '{"model":"qwen3:32b","prompt":"..."}'` |
 | GitHub PRs / API | `gh pr view`, `gh pr create`, `gh api`, `gh api graphql` |
 | AWS (Odysseus) | `export AWS_PROFILE=odysseus` then `aws sts get-caller-identity` |
 | AWS region | `eu-west-1` (set on `odysseus` profile) |

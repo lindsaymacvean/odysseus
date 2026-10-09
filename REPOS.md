@@ -11,7 +11,7 @@ Reference clone URLs for **Odysseus** (project codename) repositories.
 ## Branch and workflow
 
 - **odysseus**: Push direct to **main** (no PRs required).
-- **ai-marketing-box**: PRs to **main**; CI deploys to Mac Studio via rsync.
+- **ai-marketing-box**: PRs to **main**; push to main triggers `Deploy` workflow (Tailscale + rsync to `~/ai-marketing-box`, then `deploy/restart.sh` reloads the LaunchAgent; dashboard on port 8765). Manual redeploy: `gh workflow run deploy.yml -R bennettinnovations/ai-marketing-box`. The box copy is **not** a git checkout.
 - **eircode-scraper**: PRs to **main**.
 
 ## Work directory and cloning for any fix

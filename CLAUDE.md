@@ -35,7 +35,10 @@ Before creating a new runbook, ask whether it is a repeatable procedure or a one
 When referencing a pull request or any GitHub URL, always format as a clickable markdown link: `[PR #142](https://github.com/ORG/REPO/pull/142)`. Never paste bare URLs. When finishing a task involving a PR, **put the clickable PR link at the very end** of the summary so the user can click without scrolling.
 
 ### Commit and push meta code to ai-loom
-When making changes to meta code (anything outside `work/` — runbooks, CONTEXT.md, REPOS.md, README.md, root docs), **stage** and **commit** in the **root repo** (this workspace), then push to origin. Do not commit or push anything under `work/`.
+When making changes to meta code (anything outside `work/` — runbooks, CONTEXT.md, REPOS.md, README.md, root docs), **stage** and **commit** in the **root repo** (this workspace), then push to origin. Do not commit or push anything under `work/`. Standing permission: commit and push as we go without asking.
+
+### Capture learnings continuously
+Turn every conversation into learnings **as soon as something is learned** (decisions and why, discoveries about the box/repos/tools, what worked or failed). Update the relevant topic doc in `docs/` if one exists; otherwise append to `docs/learnings/YYYY-MM-DD.md`. Durable agent conventions go in CONTEXT.md, REPOS.md, TOOLS.md, or `.cursor/rules/`. Never record secrets. Commit and push immediately. Full rule: `.cursor/rules/capture-learnings.mdc`.
 
 ### macOS notifications when waiting for user input
 **ALWAYS** send a macOS notification when you need user input (a question, a decision, or approval). Use `osascript -e 'display notification "<message>" with title "Claude Code" sound name "Glass"'`. Also send a notification when a long-running background task completes. Never leave the user waiting without a notification.

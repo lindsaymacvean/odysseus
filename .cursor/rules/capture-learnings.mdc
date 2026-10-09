@@ -1,0 +1,31 @@
+---
+description: Turn every conversation in this repo into committed learnings, and commit/push as we go
+alwaysApply: true
+---
+
+# Capture learnings continuously
+
+This repo is the harness for Odysseus (sovereign AI boxes). Conversations are a primary source of project knowledge — capture them **as soon as something is learned**, not at the end of the session.
+
+## What counts as a learning
+
+- Decisions and their reasons (e.g. "keep odysseus as harness; app code lives in separate repos")
+- Facts discovered about the box, repos, tools, models, or customers
+- Things that worked, failed, or surprised us (with commands/versions)
+- Changes to process or direction from the user
+
+Skip chit-chat and anything already recorded.
+
+## Where to write
+
+- **Topic already has a doc** (e.g. `docs/mac-studio-*.md`, `docs/product-brief.md`): update that doc.
+- **Otherwise**: append to `docs/learnings/YYYY-MM-DD.md` (today's date) under a short heading per topic.
+- **Durable conventions** (how agents should behave): update `CONTEXT.md`, `REPOS.md`, `TOOLS.md`, or a rule in `.cursor/rules/`.
+
+Never record secrets (passwords, tokens, contents of `.secrets/`).
+
+## Commit and push
+
+The user has given standing permission: commit and push meta changes to `main` without asking, as soon as each learning is written. Small, frequent commits with descriptive messages, e.g. `Learnings: box has no CI runner; ai-marketing-box deploys via rsync`.
+
+Never commit anything under `work/` or `current/`.
